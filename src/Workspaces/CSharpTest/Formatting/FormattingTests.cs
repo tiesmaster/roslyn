@@ -1,4 +1,5 @@
-﻿// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+﻿#pragma warning disable AsyncFixer01 // Unnecessary async/await usage
+// Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9500,3 +9501,4 @@ enum TestEnum
 
     }
 }
+#pragma warning restore AsyncFixer01 // Unnecessary async/await usage
