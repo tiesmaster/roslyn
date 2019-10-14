@@ -1936,6 +1936,10 @@ public class goo : System.Object
                 break;
         }
 
+        var msg = 2 switch {
+            _ => null
+        };
+
         unsafe {
         }
 
@@ -1998,6 +2002,11 @@ var obj1 = new goo
             default: 
                 break;
         }
+
+        var msg = 2 switch
+{
+            _ => null
+        };
 
         unsafe
 {
