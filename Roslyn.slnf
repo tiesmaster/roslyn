@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "Roslyn.sln",
+    "projects": [
+      "src\\Workspaces\\CSharpTest\\Microsoft.CodeAnalysis.CSharp.Workspaces.UnitTests.csproj"
+    ]
+  }
+}
