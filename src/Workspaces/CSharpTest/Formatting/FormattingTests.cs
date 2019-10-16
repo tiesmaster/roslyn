@@ -2028,6 +2028,36 @@ public class goo : System.Object
 }", false, changingOptions);
         }
 
+        [WorkItem(751789, "http://vstfdevdiv:8080/DevDiv2/DevDiv/_workitems/edit/751789")]
+        [WorkItem(8808, "https://developercommunity.visualstudio.com/content/problem/8808/c-structure-guide-lines-for-unsafe-fixed.html")]
+        [Fact, Trait(Traits.Feature, Traits.Features.Formatting)]
+        public async Task NewLineForOpenBracesNonDefault2()
+        {
+            var changingOptions = new Dictionary<OptionKey, object>
+            {
+                { NewLinesForBracesInTypes, false },
+                { NewLinesForBracesInMethods, false },
+                { NewLinesForBracesInAnonymousMethods, false },
+                { NewLinesForBracesInControlBlocks, false },
+                { NewLinesForBracesInAnonymousTypes, false },
+                { NewLinesForBracesInObjectCollectionArrayInitializers, false },
+                { NewLinesForBracesInLambdaExpressionBody, false }
+            };
+            await AssertFormatAsync(@"class f00 {
+    void br() {
+        unsafe {
+        }
+    }
+}", @"class f00
+{
+    void br() {
+        unsafe
+{
+        }
+}
+}", false, changingOptions);
+        }
+
         [Fact, Trait(Traits.Feature, Traits.Features.Formatting)]
         public async Task NewLineForKeywordDefault()
         {
